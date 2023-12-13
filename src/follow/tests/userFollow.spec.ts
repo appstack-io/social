@@ -5,7 +5,14 @@ import {
   UserServiceClient,
   UserServiceDefinition,
 } from '@appstack-io/client';
-import { isE2E, login, runMain, useHost, usePorts } from '@appstack-io/tests';
+import {
+  isE2E,
+  login,
+  runMain,
+  setupArangoDb,
+  useHost,
+  usePorts,
+} from '@appstack-io/tests';
 import { MainMicroservicesModule } from './components/main.microservices.module';
 import { MainHttpModule } from './components/main.http.module';
 
@@ -23,6 +30,7 @@ describe('UserFollow', () => {
   const metadata = new Metadata();
 
   beforeAll(async () => {
+    await setupArangoDb();
     ports = await usePorts();
     const host = useHost();
     const channel = createChannel(`${host}:${ports.proto}`);
