@@ -8,7 +8,7 @@
   },
   "private": false,
   "license": "GPL-3.0",
-  "repository": "https://github.com/appstack-io/identity.git",
+  "repository": "https://github.com/appstack-io/social.git",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
