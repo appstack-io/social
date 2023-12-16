@@ -4,7 +4,7 @@ import {
   UserFollowServiceDefinition,
   UserServiceClient,
   UserServiceDefinition,
-} from '@appstack-io/client';
+} from './components/main.microservices.module.client';
 import {
   isE2E,
   login,

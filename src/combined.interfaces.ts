@@ -1,3 +1,7 @@
+import { Empty } from './google/protobuf/empty';
+
+import { Observable } from 'rxjs';
+
 export interface UserFollowCreateOneInput {
   followerId: string;
   followeeId: string;
@@ -72,10 +76,6 @@ export interface Followee {
 export interface UserFollowService {
   CreateOne(request: UserFollowCreateOneInput): Promise<Follower>;
   RemoveOne(request: UserFollowRemoveOneInput): Promise<Follower>;
-  FindFollowers(
-    request: UserFindFollowersInput,
-  ): Promise<UserFindFollowersResult>;
-  FindFollowees(
-    request: UserFindFolloweesInput,
-  ): Promise<UserFindFolloweesResult>;
+  FindFollowers(request: UserFindFollowersInput): Promise<UserFindFollowersResult>;
+  FindFollowees(request: UserFindFolloweesInput): Promise<UserFindFolloweesResult>;
 }
